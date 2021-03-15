@@ -1,0 +1,28 @@
+BBC news feed - Majka Miezianko gr. III
+
+W swoim projekcie wykonałam aplikację typu „news feed”, pozwalającą użytkownikowi na szybki dostęp do informacji.
+Użytkownik  wybiera z listy interesującą go kategorię, po czym wyświetla się 8 najnowszych wiadomości ze strony www.bbc.com/news z danej kategorii.
+W informacji widoczny jest tytuł i mały header – w razie, gdyby news zainteresowałaby użytkownika, może on, po kliknięciu w button „read more”
+zostać przekierowany do strony z rozwinięciem informacji.
+
+Projekt wykonałam posługując się następującymi bibliotekami:
+bs4 -  służąca do scrapowania danych,
+request - wysyłanie zapytań HTTP
+webbrowser - w moim projekcie była potrzebna, aby otworzyć adres URL w nowym oknie domyślnej przeglądarki
+(po kliknięciu buttona „read more” przez użytkownika).
+tkinter - tworzenie GUI
+typing - opisywanie zmiennych
+
+
+Swój projekt podzieliłam na trzy części. W zakładce utils.py znajdują się funkcje get_news oraz open_url.
+Pierwsza z nich służy do scrapowania newsów ze strony internetowej. Zwraca nam listę newsów
+(tutaj news składa się z headline, url, summary). Dzięki open_url można otworzyć adres URL w nowym oknie domyślnej przeglądarki.
+Oby dwie te funkcje będą przydatne w dalszej części projektu.
+
+W newsfeed.py utworzyłam klasę: CategoricalNews z atrybutem self.categorical_news i metodą get_top_news (zwraca newsy w danej ilości)
+oraz klasę BBCNewsFeeder z atrybutem self.newsdict oraz metodą get_news_by_category (zwraca listę newsów z danej kategorii).
+
+W tkinter_app.py znajduje się wykonywalna część projektu. Tutaj połączona została dotychczas opisana część projektu z GUI,
+napisanym za pomocą biblioteki tkinter. Tworzymy zatem aplikację okienkową, w której wyświetlać będą się newsy
+(a za ich scraping odpowiada wcześniejsza część kodu). Dokładne działanie opisałam w komentarzach.
+
